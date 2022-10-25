@@ -1,6 +1,8 @@
 part of 'splash_cubit.dart';
 
-@immutable
-abstract class SplashState {}
+abstract class SplashState extends Equatable{}
 
-class SplashInitial extends SplashState {}
+class SplashInitial extends SplashState {
+  @override
+  List<Object?> get props => [];
+}
