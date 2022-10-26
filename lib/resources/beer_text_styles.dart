@@ -56,9 +56,9 @@ class BeerTextStyles {
     fontFamily: Fonts.mont,
   );
 
-  static final randomBeer = TextStyle(
+  static const randomBeer = TextStyle(
     color: BeerColors.black,
-    fontSize: (16 /** GlobalVariables.heightCof).roundToDouble(),*/),
+    fontSize: 16,
     fontWeight: FontWeight.w700,
     fontFamily: Fonts.mont,
   );

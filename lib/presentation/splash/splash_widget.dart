@@ -17,7 +17,7 @@ class SplashWidget extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Image(image: AssetImage('lib/resources/drawable/beer.png')),
+                  const Image(image: AssetImage(BeerStrings.splashPictLink)),
                   Text(BeerStrings.beerVille.toUpperCase(), style: BeerTextStyles.splashTitle),
                 ],
               ),

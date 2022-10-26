@@ -14,4 +14,5 @@ class BeerStrings {
   static const description = 'Description';
   static const food = 'Food';
   static const noData = 'NO DATA';
+  static const splashPictLink = 'lib/resources/drawable/beer.png';
 }
