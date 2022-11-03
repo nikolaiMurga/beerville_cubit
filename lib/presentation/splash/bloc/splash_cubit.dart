@@ -12,6 +12,7 @@ class SplashCubit extends Cubit<SplashState> {
     try {
       emit(SplashLoading());
       Future.delayed(const Duration(seconds: 2), () => emit(SplashLoaded()));
+      // emit(SplashLoaded());
     } catch (e) {
       emit(SplashFailed(error: e.toString()));
     }
