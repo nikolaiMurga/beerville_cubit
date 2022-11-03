@@ -1,4 +1,4 @@
-import 'package:beerville_cubit/app/locator.dart';
+import 'package:beerville_cubit/app/injector.dart';
 import 'package:beerville_cubit/presentation/splash/bloc/splash_cubit.dart';
 import 'package:beerville_cubit/presentation/splash/splash_widget.dart';
 import 'package:flutter/material.dart';
@@ -10,8 +10,8 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => locator<SplashCubit>()..setup(),
-      child: const SplashWidget(),
+      create: (_) => inject<SplashCubit>()..setup(),
+      child: SplashWidget(),
     );
   }
 }
