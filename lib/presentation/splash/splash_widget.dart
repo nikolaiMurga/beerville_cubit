@@ -16,27 +16,22 @@ class SplashWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: BlocConsumer<SplashCubit, SplashState>(
+      body: BlocListener<SplashCubit, SplashState>(
         listener: (context, state) {
           if (state is SplashLoaded) {
             _logic.fuck();
             _navigation.clearPush(context, const HomeScreen());
           }
         },
-        builder: (context, state) {
-          if (state is SplashLoading) {
-            return Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Image(image: AssetImage(BeerStrings.splashPictLink)),
-                  Text(BeerStrings.beerVille.toUpperCase(), style: BeerTextStyles.splashTitle),
-                ],
-              ),
-            );
-          }
-          return const Center(child: Text(BeerStrings.noData));
-        },
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Image(image: AssetImage(BeerStrings.splashPictLink)),
+              Text(BeerStrings.beerVille.toUpperCase(), style: BeerTextStyles.splashTitle),
+            ],
+          ),
+        ),
       ),
     );
   }
