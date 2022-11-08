@@ -8,9 +8,9 @@
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
-import '../doamin/navigation.dart' as _i3;
-import '../presentation/splash/bloc/splash_cubit.dart' as _i4;
-import '../presentation/splash/splash_logic.dart'
+import '../doamin/navigation.dart' as _i4;
+import '../presentation/home/bloc/home_cubit.dart' as _i3;
+import '../presentation/splash/bloc/splash_cubit.dart'
     as _i5; // ignore_for_file: unnecessary_lambdas
 
 // ignore_for_file: lines_longer_than_80_chars
@@ -25,8 +25,8 @@ _i1.GetIt $initGetIt(
     environment,
     environmentFilter,
   );
-  gh.lazySingleton<_i3.Navigation>(() => _i3.Navigation());
-  gh.factory<_i4.SplashCubit>(() => _i4.SplashCubit());
-  gh.factory<_i5.SplashLogic>(() => _i5.SplashLogic());
+  gh.factory<_i3.HomeCubit>(() => _i3.HomeCubit());
+  gh.lazySingleton<_i4.Navigation>(() => _i4.Navigation());
+  gh.factory<_i5.SplashCubit>(() => _i5.SplashCubit());
   return get;
 }
