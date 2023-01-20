@@ -1,5 +1,5 @@
 import 'package:beerville_cubit/app/injector.dart';
-import 'package:beerville_cubit/doamin/navigation.dart';
+import 'package:beerville_cubit/domain/navigation.dart';
 import 'package:beerville_cubit/presentation/home/home_screen.dart';
 import 'package:beerville_cubit/presentation/splash/bloc/splash_cubit.dart';
 import 'package:beerville_cubit/resources/beer_strings.dart';
@@ -8,8 +8,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SplashWidget extends StatelessWidget {
-  SplashWidget({Key? key}) : super(key: key);
   final _navigation = inject<Navigation>();
+
+  SplashWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

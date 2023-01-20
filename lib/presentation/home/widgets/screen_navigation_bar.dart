@@ -12,22 +12,21 @@ class ScreenNavigationBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (_) => inject<HomeCubit>(),
+    final cubit = inject<HomeCubit>();
+
+    return BlocProvider.value(
+      value: cubit,
       child: BlocBuilder<HomeCubit, HomeState>(
         builder: (context, state) => SizedBox(
-          height: (83 * GlobalVariables.heightCof).roundToDouble(),
+          height: (90 * GlobalVariables.heightCof).roundToDouble(),
           child: BottomNavigationBar(
             items: const [
-              BottomNavigationBarItem(
-                icon:  Icon(Icons.circle),
-                label: BeerStrings.beerList,
-              ),
-              BottomNavigationBarItem(
-                icon:  Icon(Icons.circle),
-                label: BeerStrings.search,
-              ),
+              BottomNavigationBarItem(icon: Icon(Icons.circle), label: BeerStrings.beerList),
+              BottomNavigationBarItem(icon: Icon(Icons.circle), label: BeerStrings.search),
+              BottomNavigationBarItem(icon: Icon(Icons.circle), label: BeerStrings.favourite),
+              BottomNavigationBarItem(icon: Icon(Icons.circle), label: BeerStrings.settings),
             ],
+            currentIndex: cubit.state.toIndex(),
             selectedItemColor: BeerColors.black,
             unselectedItemColor: BeerColors.unselected,
             showUnselectedLabels: true,
@@ -36,6 +35,7 @@ class ScreenNavigationBar extends StatelessWidget {
             selectedLabelStyle: BeerTextStyles.bottomLabel,
             unselectedLabelStyle: BeerTextStyles.bottomLabel,
             type: BottomNavigationBarType.fixed,
+            onTap: (index) => cubit.changeScreen(index),
           ),
         ),
       ),
