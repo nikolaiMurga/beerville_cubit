@@ -9,10 +9,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ScreenNavigationBar extends StatelessWidget {
   const ScreenNavigationBar({Key? key}) : super(key: key);
+  static const Icon _icon = Icon(Icons.circle);
 
   @override
   Widget build(BuildContext context) {
     final cubit = inject<HomeCubit>();
+
 
     return BlocProvider.value(
       value: cubit,
@@ -21,10 +23,10 @@ class ScreenNavigationBar extends StatelessWidget {
           height: (90 * GlobalVariables.heightCof).roundToDouble(),
           child: BottomNavigationBar(
             items: const [
-              BottomNavigationBarItem(icon: Icon(Icons.circle), label: BeerStrings.beerList),
-              BottomNavigationBarItem(icon: Icon(Icons.circle), label: BeerStrings.search),
-              BottomNavigationBarItem(icon: Icon(Icons.circle), label: BeerStrings.favourite),
-              BottomNavigationBarItem(icon: Icon(Icons.circle), label: BeerStrings.settings),
+              BottomNavigationBarItem(icon: _icon, label: BeerStrings.beerList),
+              BottomNavigationBarItem(icon: _icon, label: BeerStrings.search),
+              BottomNavigationBarItem(icon: _icon, label: BeerStrings.favourite),
+              BottomNavigationBarItem(icon: _icon, label: BeerStrings.settings),
             ],
             currentIndex: cubit.state.toIndex(),
             selectedItemColor: BeerColors.black,
