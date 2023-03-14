@@ -1,6 +1,6 @@
 # beerville_cubit
 
-A new Flutter project.
+Demo of bloc(Cubit) project structure.
 
 ## Getting Started
 
